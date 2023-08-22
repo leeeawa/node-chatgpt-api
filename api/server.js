@@ -10,7 +10,7 @@ import ChatGPTBrowserClient from '../src/ChatGPTBrowserClient.js';
 import BingAIClient from '../src/BingAIClient.js';
 
 const arg = process.argv.find(_arg => _arg.startsWith('--settings'));
-const path = arg?.split('=')[1] ?? './settings.js';
+const path = arg?.split('=')[1] ?? '../settings.js';
 
 let settings;
 if (fs.existsSync(path)) {
