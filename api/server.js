@@ -10,12 +10,8 @@ import ChatGPTBrowserClient from '../src/ChatGPTBrowserClient.js';
 import BingAIClient from '../src/BingAIClient.js';
 const cwd = process.cwd(); 
 console.log('Current directory: ' + cwd);
-fs.readdir(cwd, (err, files) => {
-  if (err) throw err;
-  files.forEach(file => {
-    console.log(file);
-  });
-});
+const data = fs.readFileSync('./settings.js', 'utf8');
+console.log(data);
 const arg = process.argv.find(_arg => _arg.startsWith('--settings'));
 const path = arg?.split('=')[1] ?? './settings.js';
 
