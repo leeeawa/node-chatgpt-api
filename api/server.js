@@ -8,12 +8,8 @@ import { KeyvFile } from 'keyv-file';
 import ChatGPTClient from '../src/ChatGPTClient.js';
 import ChatGPTBrowserClient from '../src/ChatGPTBrowserClient.js';
 import BingAIClient from '../src/BingAIClient.js';
-const cwd = process.cwd(); 
-console.log('Current directory: ' + cwd);
-const files = fs.readdirSync(cwd);
-console.log(files);
 const arg = process.argv.find(_arg => _arg.startsWith('--settings'));
-const path = arg?.split('=')[1] ?? './settings.js';
+const path = arg?.split('=')[1] ?? './api/settings.js';
 
 let settings;
 if (fs.existsSync(path)) {
